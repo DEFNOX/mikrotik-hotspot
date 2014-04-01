@@ -7,7 +7,6 @@
     <title>Hotspot</title>
 
     <meta name="viewport" content="width=device-width">
-    <meta http-equiv="refresh" content="2; url=$(link-redirect)">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="-1">
 
@@ -16,23 +15,22 @@
     <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/customtabs.js"></script>
-
-      <script language="JavaScript">
-      <!--
-          function startClock() {
-              $(if popup == 'true')
-              open('$(link-status)', 'hotspot_status', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=290,height=200');
-        $(endif)
-        location.href = '$(link-redirect)';
-          }
-      //-->
-      </script>
-    
   </head>
   
-  <body onLoad="startClock()" >
+  <body $(if advert-pending == 'yes') onLoad="openAdvert()" $(endif) >
 <div class="container">
       <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active">
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
         <div class="navbar navbar-default">
           <a class="navbar-brand" href="#">Hotspot</a><a></a>
           <div class="container">
@@ -60,14 +58,17 @@
           </div>
         </div>
         <div class="jumbotron">
-          <div class="alert alert-dismissable alert-success">
-            <div>You are logged in
+          <div class="alert alert-dismissable alert-warning">
+            <div>Hotspot ERROR:
             </div>
             <div>
-              <span class="Apple-tab-span" style="white-space:pre"> </span>If nothing happens, click <u><b><a href="$(link-redirect)">here</a></b></u>
+              <span class="Apple-tab-span" style="white-space:pre"> </span>
+              $(error)
             </div>
-            <button type="button" class="close" data-dismiss="alert"></button>
           </div>
+            <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+            <button   type="submit" value="log in" class="btn btn-info" href="#">Log in page</button>
+          </form>
         </div>
       </div>
       <div class="footer">
