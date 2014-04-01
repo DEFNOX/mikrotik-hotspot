@@ -100,3 +100,15 @@
       padding: 15px;
       margin: 0 auto;
     }
+    .table {
+    table-layout: fixed
+    }
+    .table {
+    word-break: break-all;
+    }
+    
+
+
+
+
+

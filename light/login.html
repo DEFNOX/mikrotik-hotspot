@@ -1,4 +1,5 @@
-<!doctype html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html>
   
@@ -56,7 +57,8 @@
                   <a href="#login" data-toggle="tab">Sign in</a>
                 </li>
                 <li class="disabled">
-                  <a>Status</a>
+                  <!-- <a href="#status" data-toggle="tab"> --> 
+                    <a>Status</a>
                 </li>
                 <li class="disabled">
                   <a>About</a>
@@ -87,7 +89,11 @@
           </div>
           <p class="text-muted">10 minutes to reconnect</p>
           <p></p>
-          <a class="btn btn-block btn-success" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" >Start session</a>
+        <!--
+          <a class="btn btn-block hidden-xs btn-success" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" >Start session</a>
+          <a class="btn btn-block visible-xs btn-success" href="$(link-login-only)?dst=/status&amp;username=T-$(mac-esc)" >Start session</a> 
+        -->
+          <a class="btn btn-block  btn-success" href="$(link-login-only)?dst=/status&amp;username=T-$(mac-esc)" >Start session</a>
         </div>
       </div>
         <!-- End container -->
@@ -114,6 +120,57 @@
         </div>
       </div>
         <!-- End Container -->
+        <div class="tab-pane" id="status">
+        <div class="jumbotron">
+          <table class="table table-striped table-bordered">
+            <tbody>
+            $(if login-by == 'trial')              
+              </tr>
+                <td>User</td>
+                <td> trial </td>
+              </tr>
+              $(elif login-by != 'mac')              
+              </tr>
+                <td>User</td>
+                <td> $(username) </td>
+              </tr>
+              $(endif)
+              <tr>
+                <td>IP address</td>
+                <td>$(ip)</td>
+              </tr>
+              <tr>
+                <td>Bytes up/down</td>
+                <td> $(bytes-in-nice) / $(bytes-out-nice) </td>
+              </tr>
+              $(if session-time-left)
+              <tr>
+                <td>Connected/left</td>
+                <td> $(uptime) / $(session-time-left) </td>
+              </tr>
+              $(else)
+              <tr>
+                <td>Connected</td>
+                <td> $(uptime) </td>
+              </tr>
+              $(endif)
+              $(if blocked == 'yes')
+              <tr>
+                <td>Status</td>
+                <td>$ip</td>
+              </tr>
+              $(elif refresh-timeout)
+              <tr>
+                <td>Refresh status</td>
+                <td>$(refresh-timeout)</td>
+              </tr>
+              $(endif)
+            </tbody>
+          </table>
+          <a class="btn btn-primary">Logout / Login</a>
+        </div>
+      </div>
+        <!-- End container -->
       </div>
       <!--End ContainterS -->
       </div>
