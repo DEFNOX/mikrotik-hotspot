@@ -1,7 +1,7 @@
 Custom hotspot web-interface (mikrotik)
 ===========
-
-Custom HTML pages for mikrotik hotspot system. (Trial users)
-Used bootstrap 3, jquery 1.10
-
-Soon: Different languages, dark version 
+Обновленный веб интерфейс для хотспот-системы на маршрутизаторах mikrotik.
+Использую: Bootstrap 3; jQuery
+===========
+Customised web-interface for hotspot system in mikrotik routers.
+Used: Bootstrap 3; jQuery
