@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Точка доступа</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="asset/css/bootstrap.min.css">
+	<link rel="stylesheet" href="asset/css/custom.css">
+	<script type="text/javascript" charset="utf-8" src="asset/js/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="asset/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- Login form -->
+$(if chap-id)
+<form name="sendin" action="$(link-login-only)" method="post">
+	<input type="hidden" name="username" />
+	<input type="hidden" name="password" />
+	<input type="hidden" name="dst" value="$(link-orig)" />
+	<input type="hidden" name="popup" value="false" />
+</form>
+
+<script type="text/javascript" src="/md5.js"></script>
+<script type="text/javascript">
+	<!--
+	function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	}
+	//-->
+</script>
+$(endif)
+<div class="container">
+	<div class="jumbotron container-fluid pink-box">
+		<div id="my-tab-content" class="tab-content">
+			<div class="tab-pane active" id="trial">
+				<div align="center">
+					<img class="profile-img" src="img/image.jpg">
+					<h3>Бесплатный Wi-Fi</h3>
+					<p id="rules-text" style="">Нажимая кнопку ниже, вы соглашаетесь с <a href="#rules" data-toggle="tab">правилами использования</a></p>
+					<p><a class="btn btn-info btn-lg btn-block bttn-wide" href="$(link-login-only)?dst=http://www.winny.ru&amp;username=T-$(mac-esc)">Подключиться</a></p>
+					<p class="text-center"><a href="#login" data-toggle="tab" class="btn btn-default">Войти с паролем</a></p>
+				</div>
+			</div>
+			<div class="tab-pane" id="login">
+				<div>
+					<img class="profile-img" src="img/image.jpg"
+						 alt="">
+					<form class="form-signin" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+					<input type="hidden" name="dst" value="$(link-orig)" />
+					<input type="hidden" name="popup" value="true" />
+					<p class="text-center">Авторизованный доступ</p>
+					<input type="text" name="username" class="form-control" placeholder="Логин" required>
+					<input type="password" name="password" class="form-control" placeholder="Пароль" required>
+					<input type="submit" class="btn btn-lg btn-success btn-block" value="Вход" />
+					</form>
+					<p class="text-center"><a href="#trial" data-toggle="tab" class="btn btn-default">Войти без пароля</a></p>
+				</div>
+			</div>
+			<div class="tab-pane" id="rules">
+				<div>
+					<img class="profile-img-small" src="img/image.jpg">
+					<p>
+						(Текст) предлагает своим клиентам возможность беспроводного доступа к интренету. Пользование данной сетью является бесплатным. Беспроводная сеть работает через незашифрованные протоколы, поэтому (Текст) не несет ответственности за сохранность и безопасных данных, передаваемых во время работы в сети Интернет.
+					</p>
+					<h3 class="text-center">Условия пользования:</h3>
+					<p id="rules-text">
+					<ul>
+						<li>Сотрудники (Текст) не осуществляют настройку оборудования Пользователей, не предоставляют услуг по настройке.</li>
+						<li>Доступ к сети предоставляется только после принятия данных условий, путем нажатия на кнопку "Подключиться"</li>
+						<li>Пользователь, принимая условия, соглашается выполнять их в полной мере.</li>
+					</ul>
+					</p>
+					<h3 class="text-center">Правила использования:</h3>
+					<p id="rules-text">
+					<ul>
+						<li>Пользователи самостоятельно отвечают за защиту своего оборудования от вирусов, шпионских программ и прочих угроз.</li>
+						<li>Пользователям запрещается распространение вирусов, шпионских программ, осуществлять действия, направленные на нарушение работы Сети, устройств Сети, оборудования других Пользователей, оборудования третих лиц, организаций, и т.д.</li>
+						<li>Запрещено использование интернета для просмотра и скачивания порнографических материалов, вредоносных программ, компьютерных игр и любых материалов, противоречащих законодательству Российской Федерации.</li>
+						<li>Запрещено использования Сети для действий, противоречащих законодательству Российской Федерации.</li>
+					</ul>
+					</p>
+					<h3 class="text-center"> Ответственность:</h3>
+					<p id="rules-text">
+					<ul>
+						<li>За нарушение правил пользователь вносится в список блокировки для подключения к Сети, также к пользователю могут быть применены действия со стороны администрации.</li>
+						<li>За нарушение законов Российской Федерации к Пользователю будт применеы действия со стороны правоохранительных органов.</li>
+					</ul>
+					</p>
+					<p class="text-center">
+						<a href="#trial" data-toggle="tab" class="btn btn-info">Вернуться</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

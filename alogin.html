@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Вход</title>
+	<meta http-equiv="refresh" content="2; url=$(link-redirect)">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="asset/css/bootstrap.min.css">
+	<link rel="stylesheet" href="asset/css/custom.css">
+	<script type="text/javascript" charset="utf-8" src="asset/js/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="asset/js/bootstrap.min.js"></script>
+</head>
+<script language="JavaScript">
+<!--
+    function startClock() {
+        $(if popup == 'true')
+        open('$(link-status)', 'hotspot_status', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=290,height=200');
+	$(endif)
+	location.href = '$(link-redirect)';
+    }
+//-->
+</script>
+</head>
+<body onLoad="startClock()">
+<body>
+<div class="container">
+	<div class="jumbotron container-fluid pink-box" align="center">
+		<h2>Вы успешно подключились</h2>
+		<p>Если ничего не произошло, нажмите:</p>
+		<p><a class="btn btn-block btn-info bttn-wide" href="$(link-redirect)">Продолжить</a></p>
+	</div>
+</div>
+</body>
+</html>
